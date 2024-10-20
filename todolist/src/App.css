@@ -1,0 +1,150 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3); /* Translucent background */
+  backdrop-filter: blur(10px); /* Blur the background behind the card */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px;
+  width: 400px;
+}
+
+.home:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.create_form input {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* Translucent input background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create_form input:focus {
+  border-bottom-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.create_form button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 20px; /* More rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px; /* Slightly larger font size */
+  font-weight: bold; /* Bold text for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Subtle initial shadow */
+  margin-top: 15px; /* Space between the input and button */
+}
+
+.create_form button:hover {
+  background: linear-gradient(135deg, #0056b3, #007bff); /* Reverse gradient on hover */
+  transform: scale(1.1); /* Slightly larger on hover */
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.5); /* Slightly larger shadow */
+}
+
+.no_record {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #777;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.todo_item {
+  background: rgba(255, 255, 255, 0.6); /* Translucent card background */
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid #007bff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.todo_item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.todo_item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(0, 123, 255, 0.2), rgba(255, 255, 255, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.todo_item:hover::before {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  width: 345px;
+  justify-content: space-between;
+  background-color: #007bff;
+  color: aliceblue;
+  height: 35px;
+  padding: 2px 5px 2px 5px;
+  margin-top: 2px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox .icon {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.task div span {
+  margin: 0px 5px 0px 4px;
+}
+
+.task div .icon {
+  cursor: pointer;
+}
